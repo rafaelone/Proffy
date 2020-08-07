@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -14,8 +14,18 @@ import LandingImg from '../../assets/images/landing.svg';
 import studyIcon from '../../assets/images/icons/study.svg';
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import purpleHeartIco from '../../assets/images/icons/purple-heart.svg';
+import api from '../../services/api';
 
 const Landing: React.FC = () => {
+  const [totalConnections, setTotalConnections] = useState(0);
+
+  useEffect(() => {
+    api.get('connections').then((response) => {
+      const { total } = response.data;
+      setTotalConnections(total);
+    });
+  }, []);
+
   return (
     <Container>
       <Content>
@@ -33,7 +43,7 @@ const Landing: React.FC = () => {
           </Link>
         </ButtonsContainer>
         <span>
-          Total de 200 conexões já realizadas{' '}
+          Total de {totalConnections} conexões já realizadas{' '}
           <img src={purpleHeartIco} alt="Coração roxo" />
         </span>
       </Content>

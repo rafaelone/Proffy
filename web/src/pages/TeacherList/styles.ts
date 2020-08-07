@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Form } from '@unform/web';
 
 export const Container = styled.div`
   width: 100vw;
@@ -9,7 +10,7 @@ export const Container = styled.div`
   }
 `;
 
-export const FormHeader = styled.form`
+export const FormHeader = styled(Form)`
   margin-top: 3.2rem;
 
   @media (min-width: 700px) {
@@ -37,7 +38,7 @@ export const FormHeader = styled.form`
       color: var(--color-text-in-primary);
       font-size: 1.4rem;
     }
-    input {
+    /* select {
       width: 100%;
       height: 5.6rem;
       margin-top: 0.8rem;
@@ -47,7 +48,7 @@ export const FormHeader = styled.form`
       outline: 0;
       padding: 0 1.6rem;
       font: 1.6rem Archivo;
-    }
+    } */
   }
 
   div + div {

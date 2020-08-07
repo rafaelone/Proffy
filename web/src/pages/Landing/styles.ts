@@ -96,7 +96,7 @@ export const ButtonsContainer = styled.div`
     justify-content: center;
     text-decoration: none;
     color: var(--color-button-text);
-    transition: background-color 0.2s;
+    transition: background 0.2s;
     @media (min-width: 1100px) {
       font-size: 2.4rem;
     }
